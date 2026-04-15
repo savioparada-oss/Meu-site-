@@ -31,7 +31,7 @@ body {
     border: 2px solid #bc13fe;
     box-shadow: 0 0 20px #bc13fe;
     max-width: 800px;
-    margin: 10px auto; /* REDUZIDO */
+    margin: 10px auto;
 }
 
 /* NOME */
@@ -50,21 +50,23 @@ body {
 /* GRID */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 15px;
 }
 
-/* CARD */
+/* CARD PADRÃO */
 .card {
     border: 1px solid #bc13fe;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 18px;
+    border-radius: 12px;
     transition: 0.3s;
+    background: rgba(255,255,255,0.02);
 }
 
+/* EFEITO HOVER */
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px #bc13fe;
+    box-shadow: 0 0 20px #bc13fe;
 }
 
 /* IMAGEM */
@@ -78,11 +80,19 @@ body {
 .card h3 {
     color: #bc13fe;
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .card p {
     font-size: 12px;
     color: #ccc;
+}
+
+/* ÍCONES GRANDES */
+.icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 8px;
 }
 
 /* BOTÃO ORÇAMENTO */
@@ -204,18 +214,65 @@ body {
     </div>
 </div>
 
-<!-- O QUE FAZ -->
+<!-- O QUE FAZ (MELHORADO) -->
 <div class="container">
     <h2>🔥 O que eu faço</h2>
 
     <div class="cards">
 
-        <div class="card"><h3>🌐 Sites</h3><p>Criação moderna</p></div>
-        <div class="card"><h3>⚙️ Sistemas</h3><p>Web tools personalizados</p></div>
-        <div class="card"><h3>📱 Apps</h3><p>Aplicações funcionais</p></div>
-        <div class="card"><h3>🎬 Vídeos</h3><p>Edição social</p></div>
-        <div class="card"><h3>📈 Tráfego Pago</h3><p>Gestão de anúncios</p></div>
-        <div class="card"><h3>📊 Tráfego Orgânico</h3><p>Crescimento digital</p></div>
+        <div class="card">
+            <span class="icon">🌐</span>
+            <h3>Sites</h3>
+            <p>Criação moderna</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">⚙️</span>
+            <h3>Sistemas</h3>
+            <p>Web tools personalizados</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">📱</span>
+            <h3>Apps</h3>
+            <p>Aplicações funcionais</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">🎬</span>
+            <h3>Vídeos</h3>
+            <p>Edição social</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">📈</span>
+            <h3>Tráfego Pago</h3>
+            <p>Gestão de anúncios</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">📊</span>
+            <h3>Tráfego Orgânico</h3>
+            <p>Crescimento digital</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">💰</span>
+            <h3>Marketing Digital</h3>
+            <p>Estratégias online</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">📦</span>
+            <h3>Revenda</h3>
+            <p>Produtos digitais</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">💸</span>
+            <h3>Renda Extra</h3>
+            <p>Ganhos pela internet</p>
+        </div>
 
     </div>
 </div>
