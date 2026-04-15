@@ -31,7 +31,7 @@ body {
     border: 2px solid #bc13fe;
     box-shadow: 0 0 20px #bc13fe;
     max-width: 800px;
-    margin: 10px auto; /* REDUZIDO */
+    margin: 10px auto;
 }
 
 /* NOME */
@@ -50,36 +50,60 @@ body {
 /* GRID */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 15px;
 }
 
-/* CARD */
+/* CARD BASE */
 .card {
-    border: 1px solid #bc13fe;
-    padding: 15px;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(188, 19, 254, 0.4);
+    padding: 18px;
+    border-radius: 12px;
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* EFEITO BRILHO */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(188,19,254,0.2), transparent 60%);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px #bc13fe;
+    box-shadow: 0 0 25px #bc13fe;
+    border-color: #bc13fe;
 }
 
-/* IMAGEM */
-.card img {
-    width: 55px;
-    height: 55px;
+/* ÍCONE */
+.card span {
+    font-size: 28px;
+    display: block;
     margin-bottom: 8px;
 }
 
-/* TEXTO */
+/* TÍTULO */
 .card h3 {
     color: #bc13fe;
-    font-size: 14px;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
+/* TEXTO */
 .card p {
     font-size: 12px;
     color: #ccc;
@@ -131,111 +155,49 @@ body {
     </div>
 </div>
 
-<!-- LINGUAGENS -->
-<div class="container">
-    <h2>💻 Linguagens</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-            <h3>Python</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg">
-            <h3>C++</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg">
-            <h3>JavaScript</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg">
-            <h3>PHP</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
-            <h3>Java</h3>
-        </div>
-
-    </div>
-</div>
-
-<!-- INOVAÇÃO DIGITAL -->
-<div class="container">
-    <h2>⚡ Inovação Digital</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg">
-            <h3>Kali Linux</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg">
-            <h3>GitHub</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg">
-            <h3>Git</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg">
-            <h3>VS Code</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png">
-            <h3>Elender</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png">
-            <h3>Acode</h3>
-        </div>
-
-    </div>
-</div>
-
-<!-- O QUE FAZ -->
+<!-- O QUE FAZ (MELHORADO) -->
 <div class="container">
     <h2>🔥 O que eu faço</h2>
 
     <div class="cards">
 
-        <div class="card"><h3>🌐 Sites</h3><p>Criação moderna</p></div>
-        <div class="card"><h3>⚙️ Sistemas</h3><p>Web tools personalizados</p></div>
-        <div class="card"><h3>📱 Apps</h3><p>Aplicações funcionais</p></div>
-        <div class="card"><h3>🎬 Vídeos</h3><p>Edição social</p></div>
-        <div class="card"><h3>📈 Tráfego Pago</h3><p>Gestão de anúncios</p></div>
-        <div class="card"><h3>📊 Tráfego Orgânico</h3><p>Crescimento digital</p></div>
+        <div class="card">
+            <span>🌐</span>
+            <h3>Sites</h3>
+            <p>Criação de sites modernos e responsivos</p>
+        </div>
+
+        <div class="card">
+            <span>⚙️</span>
+            <h3>Sistemas</h3>
+            <p>Ferramentas web personalizadas</p>
+        </div>
+
+        <div class="card">
+            <span>📱</span>
+            <h3>Apps</h3>
+            <p>Aplicações simples e funcionais</p>
+        </div>
+
+        <div class="card">
+            <span>🎬</span>
+            <h3>Vídeos</h3>
+            <p>Edição para redes sociais</p>
+        </div>
+
+        <div class="card">
+            <span>📈</span>
+            <h3>Tráfego Pago</h3>
+            <p>Gestão de anúncios e campanhas</p>
+        </div>
+
+        <div class="card">
+            <span>📊</span>
+            <h3>Tráfego Orgânico</h3>
+            <p>Crescimento sem anúncios</p>
+        </div>
 
     </div>
-</div>
-
-<!-- ORÇAMENTO -->
-<div class="container">
-    <a class="orcamento-btn" href="#contato">
-        Fazer Orçamento
-    </a>
-</div>
-
-<!-- CONTATO -->
-<div id="contato" class="container">
-
-    <h2>📞 Contato</h2>
-
-    <a class="btn" href="https://wa.me/5537998219330" target="_blank">WhatsApp</a>
-    <a class="btn" href="https://www.instagram.com/savio_ss_" target="_blank">Instagram</a>
-    <a class="btn" href="https://github.com/savioparada-oss" target="_blank">GitHub</a>
-
 </div>
 
 </body>
