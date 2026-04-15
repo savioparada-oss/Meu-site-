@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sávio Dev | Hacker Bio</title>
+    <style>
+        /* Reset e Estilo Geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        /* Canvas de Fundo (Matrix Code) */
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Container Principal */
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid #bc13fe;
+            box-shadow: 0 0 20px #bc13fe, inset 0 0 10px #bc13fe;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            backdrop-filter: blur(5px);
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 0 0 15px #bc13fe;
+        }
+
+        .status-text {
+            font-size: 0.8rem;
+            color: #bc13fe;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Botões Neon */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #fff;
+            padding: 12px;
+            border: 2px solid #bc13fe;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 0 5px #bc13fe;
+        }
+
+        .btn:hover {
+            background: #bc13fe;
+            color: #000;
+            box-shadow: 0 0 25px #bc13fe;
+            transform: scale(1.05);
+        }
+
+        /* Stats (Views/Likes) */
+        .stats {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .views-count {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .reaction-system {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .reaction-btn {
+            background: transparent;
+            border: 1px solid #bc13fe;
+            color: #fff;
+            padding: 8px 18px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 70px;
+        }
+
+        .reaction-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+        .reaction-btn span {
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .voted-msg {
+            font-size: 0.7rem;
+            color: #bc13fe;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrix"></canvas>
+
+    <div class="container">
+        <div class="profile-name">Sávio Dev</div>
+        <div class="status-text">System Administrator</div>
+        
+        <div class="links">
+            <a href="https://www.instagram.com/savio_ss_?igsh=MW5hbHJpN25yZWY5cA==" target="_blank" class="btn">Instagram</a>
+            <a href="https://wa.me/5537998219330" target="_blank" class="btn">WhatsApp</a>
+            <a href="https://github.com/savioparada-oss" target="_blank" class="btn">GitHub</a>
+        </div>
+
+        <div class="stats">
+            <div class="views-count">ACCESS_LOG: <span id="view-val">0</span> views</div>
+            
+            <div class="reaction-system">
+                <button id="like-btn" class="reaction-btn" onclick="handleVote('like')">
+                    👍 <span id="like-val">0</span>
+                </button>
+                <button id="dislike-btn" class="reaction-btn" onclick="handleVote('dislike')">
+                    👎 <span id="dislike-val">0</span>
+                </button>
+            </div>
+            <div id="voted-msg" class="voted-msg">VOTO REGISTRADO NO BANCO DE DADOS</div>
+        </div>
+    </div>
+
+    <script>
+        // --- EFEITO MATRIX ---
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = "01qwertyuiopasdfhgjklzx12345678cvb9$#<>/₹?∆nm"; // Estilo binário para parecer mais "Dev"
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#bc13fe";
+            ctx.font = fontSize + "px monospace";
+
+            drops.forEach((y, i) => {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, y * fontSize);
+                if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            });
+        }
+        setInterval(drawMatrix, 35);
+
+        // --- LÓGICA DE STORAGE ---
+        let views = parseInt(localStorage.getItem('savio_views') || 0);
+        let likes = parseInt(localStorage.getItem('savio_likes') || 42); // Começa com 42 para não ficar vazio
+        let dislikes = parseInt(localStorage.getItem('savio_dislikes') || 2);
+        let hasVoted = localStorage.getItem('savio_has_voted');
+
+        // Contagem de views
+        views++;
+        localStorage.setItem('savio_views', views);
+        document.getElementById('view-val').innerText = views;
+        document.getElementById('like-val').innerText = likes;
+        document.getElementById('dislike-val').innerText = dislikes;
+
+        // Verifica se já votou antes
+        if (hasVoted) {
+            disableButtons();
+        }
+
+        function handleVote(type) {
+            if (hasVoted) return;
+
+            if (type === 'like') {
+                likes++;
+                localStorage.setItem('savio_likes', likes);
+                document.getElementById('like-val').innerText = likes;
+            } else {
+                dislikes++;
+                localStorage.setItem('savio_dislikes', dislikes);
+                document.getElementById('dislike-val').innerText = dislikes;
+            }
+
+            localStorage.setItem('savio_has_voted', 'true');
+            disableButtons();
+        }
+
+        function disableButtons() {
+            document.getElementById('like-btn').disabled = true;
+            document.getElementById('dislike-btn').disabled = true;
+            document.getElementById('voted-msg').style.display = 'block';
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
