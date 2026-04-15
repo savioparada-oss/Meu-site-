@@ -31,22 +31,57 @@ body {
     border-radius: 15px;
     border: 2px solid #bc13fe;
     box-shadow: 0 0 20px #bc13fe;
-    max-width: 500px;
+    max-width: 650px;
     margin: 20px auto;
 }
 
-/* TITULO */
+/* NOME */
 .profile-name {
-    font-size: 28px;
+    font-size: 30px;
     text-shadow: 0 0 15px #bc13fe;
 }
 
-.status-text {
+/* FRASE */
+.subtext {
     color: #bc13fe;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 0;
+    font-size: 14px;
 }
 
-/* BOTÃO ORÇAMENTO */
+/* CARDS GRID */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+/* CARD */
+.card {
+    border: 1px solid #bc13fe;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #bc13fe;
+}
+
+/* LOGO */
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+/* NOME LINGUAGEM */
+.card h3 {
+    color: #bc13fe;
+    font-size: 14px;
+}
+
+/* BOTÃO */
 .orcamento-btn {
     display: inline-block;
     margin: 15px 0;
@@ -64,32 +99,7 @@ body {
     transform: scale(1.05);
 }
 
-/* CARDS */
-.cards {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-.card {
-    border: 1px solid #bc13fe;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    box-shadow: 0 0 15px #bc13fe;
-    transform: scale(1.03);
-}
-
-.card h3 {
-    color: #bc13fe;
-    margin-bottom: 5px;
-}
-
-/* BOTÕES */
+/* BOTÕES CONTATO */
 .btn {
     display: block;
     margin: 10px auto;
@@ -104,10 +114,6 @@ body {
     background: #bc13fe;
     color: black;
 }
-
-#contato {
-    margin-top: 40px;
-}
 </style>
 </head>
 
@@ -116,22 +122,60 @@ body {
 <!-- PERFIL -->
 <div class="container">
     <div class="profile-name">Sávio Dev 🚀</div>
-    <div class="status-text">Desenvolvedor | Criador de sistemas | Web tools</div>
 
-    <!-- BOTÃO ORÇAMENTO -->
-    <a class="orcamento-btn" href="#contato">
-        Fazer Orçamento
-    </a>
+    <div class="subtext">
+        Conjunto de códigos e habilidades para programar
+    </div>
 </div>
 
-<!-- O QUE VOCÊ FAZ -->
+<!-- LINGUAGENS -->
+<div class="container">
+    <h2>💻 Linguagens</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg">
+            <h3>Rust</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+            <h3>Python</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">
+            <h3>C++</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+            <h3>JavaScript</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+            <h3>PHP</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+            <h3>Java</h3>
+        </div>
+
+    </div>
+</div>
+
+<!-- O QUE FAZ -->
 <div class="container">
     <h2>🔥 O que eu faço</h2>
 
     <div class="cards">
+
         <div class="card">
             <h3>🌐 Sites</h3>
-            <p>Criação de sites modernos e rápidos</p>
+            <p>Criação de sites modernos</p>
         </div>
 
         <div class="card">
@@ -141,24 +185,32 @@ body {
 
         <div class="card">
             <h3>📱 Apps</h3>
-            <p>Criação de aplicativos simples</p>
+            <p>Aplicações simples e funcionais</p>
         </div>
 
         <div class="card">
-            <h3>🎬 Edição de Vídeo</h3>
-            <p>Edições para redes sociais</p>
+            <h3>🎬 Vídeos</h3>
+            <p>Edição para redes sociais</p>
         </div>
 
         <div class="card">
             <h3>📈 Tráfego Pago</h3>
-            <p>Gestão de anúncios pagos</p>
+            <p>Gestão de anúncios</p>
         </div>
 
         <div class="card">
             <h3>📊 Tráfego Orgânico</h3>
             <p>Crescimento sem anúncios</p>
         </div>
+
     </div>
+</div>
+
+<!-- ORÇAMENTO -->
+<div class="container">
+    <a class="orcamento-btn" href="#contato">
+        Fazer Orçamento
+    </a>
 </div>
 
 <!-- CONTATO -->
