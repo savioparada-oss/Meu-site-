@@ -23,7 +23,7 @@ body {
     text-align: center;
 }
 
-/* ===== LOADING ===== */
+/* LOADING */
 .loader {
     position: fixed;
     width: 100%;
@@ -48,7 +48,6 @@ body {
     background: #222;
     margin-top: 20px;
     overflow: hidden;
-    border-radius: 5px;
 }
 
 .bar span {
@@ -67,7 +66,7 @@ body {
     50% { opacity: 0.3; }
 }
 
-/* ANIMAÇÃO ENTRADA */
+/* ENTRADA */
 .main {
     opacity: 0;
     transform: scale(0.95);
@@ -124,14 +123,14 @@ body {
     box-shadow: 0 0 20px #bc13fe;
 }
 
-/* IMAGEM */
+/* IMG */
 .card img {
     width: 55px;
     height: 55px;
     margin-bottom: 8px;
 }
 
-/* TEXTO */
+/* TEXT */
 .card h3 {
     color: #bc13fe;
     font-size: 14px;
@@ -149,7 +148,7 @@ body {
     margin-bottom: 8px;
 }
 
-/* BOTÃO */
+/* BTN */
 .orcamento-btn {
     display: inline-block;
     margin: 15px 0;
@@ -192,7 +191,6 @@ body {
     <div class="bar"><span></span></div>
 </div>
 
-<!-- SITE -->
 <div class="main">
 
 <!-- PERFIL -->
@@ -215,16 +213,29 @@ body {
     </div>
 </div>
 
+<!-- INOVAÇÃO DIGITAL (VOLTOU) -->
+<div class="container">
+    <h2>⚡ Inovação Digital</h2>
+    <div class="cards">
+        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"><h3>Kali Linux</h3></div>
+        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"><h3>GitHub</h3></div>
+        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"><h3>Git</h3></div>
+        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"><h3>VS Code</h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png"><h3>Elender</h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/888/888859.png"><h3>Acode</h3></div>
+    </div>
+</div>
+
 <!-- O QUE FAZ -->
 <div class="container">
     <h2>🔥 O que eu faço</h2>
     <div class="cards">
-        <div class="card"><span class="icon">🌐</span><h3>Sites</h3><p>Criação moderna</p></div>
-        <div class="card"><span class="icon">⚙️</span><h3>Sistemas</h3><p>Web tools personalizados</p></div>
-        <div class="card"><span class="icon">📱</span><h3>Apps</h3><p>Aplicações funcionais</p></div>
-        <div class="card"><span class="icon">🎬</span><h3>Vídeos</h3><p>Edição social</p></div>
-        <div class="card"><span class="icon">📈</span><h3>Marketing Digital</h3><p>Estratégias online</p></div>
-        <div class="card"><span class="icon">💸</span><h3>Renda Extra</h3><p>Ganhos pela internet</p></div>
+        <div class="card"><span class="icon">🌐</span><h3>Sites</h3></div>
+        <div class="card"><span class="icon">⚙️</span><h3>Sistemas</h3></div>
+        <div class="card"><span class="icon">📱</span><h3>Apps</h3></div>
+        <div class="card"><span class="icon">🎬</span><h3>Vídeos</h3></div>
+        <div class="card"><span class="icon">📈</span><h3>Marketing</h3></div>
+        <div class="card"><span class="icon">💸</span><h3>Renda Extra</h3></div>
     </div>
 </div>
 
@@ -244,7 +255,6 @@ body {
 </div>
 
 <script>
-// LOADING
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.querySelector(".loader").style.display = "none";
