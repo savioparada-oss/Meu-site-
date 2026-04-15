@@ -18,9 +18,18 @@ html {
 }
 
 body {
-    background: #000;
+    background: black;
     color: white;
     text-align: center;
+    overflow-x: hidden;
+}
+
+/* MATRIX BACKGROUND */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 /* CONTAINER */
@@ -29,58 +38,64 @@ body {
     padding: 25px;
     border-radius: 15px;
     border: 2px solid #bc13fe;
-    box-shadow: 0 0 20px #bc13fe;
-    max-width: 800px;
-    margin: 10px auto;
+    box-shadow: 0 0 25px #bc13fe;
+    max-width: 850px;
+    margin: 20px auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
+
+.container.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* NOME */
 .profile-name {
-    font-size: 32px;
-    text-shadow: 0 0 15px #bc13fe;
+    font-size: 36px;
+    text-shadow: 0 0 20px #bc13fe;
 }
 
 /* FRASE */
 .subtext {
     color: #bc13fe;
     margin: 10px 0 20px 0;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* GRID */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 18px;
 }
 
-/* CARD PADRÃO */
+/* CARD */
 .card {
     border: 1px solid #bc13fe;
     padding: 18px;
     border-radius: 12px;
+    background: rgba(255,255,255,0.03);
     transition: 0.3s;
-    background: rgba(255,255,255,0.02);
 }
 
-/* EFEITO HOVER */
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #bc13fe;
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #bc13fe;
 }
 
 /* IMAGEM */
 .card img {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 8px;
 }
 
 /* TEXTO */
 .card h3 {
     color: #bc13fe;
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 15px;
 }
 
 .card p {
@@ -88,63 +103,67 @@ body {
     color: #ccc;
 }
 
-/* ÍCONES GRANDES */
+/* ICON */
 .icon {
-    font-size: 28px;
-    display: block;
+    font-size: 30px;
     margin-bottom: 8px;
 }
 
-/* BOTÃO ORÇAMENTO */
+/* BOTÃO */
 .orcamento-btn {
     display: inline-block;
-    margin: 15px 0;
-    padding: 12px 22px;
+    margin: 20px 0;
+    padding: 14px 26px;
     background: linear-gradient(90deg, #bc13fe, #7a00ff);
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: bold;
-    box-shadow: 0 0 15px #bc13fe;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 25px #bc13fe;
     transition: 0.3s;
 }
 
 .orcamento-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 0 40px #bc13fe;
 }
 
 /* CONTATO */
 .btn {
     display: block;
-    margin: 10px auto;
+    margin: 12px auto;
     padding: 12px;
     border: 2px solid #bc13fe;
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    width: 200px;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #bc13fe;
     color: black;
+    box-shadow: 0 0 15px #bc13fe;
 }
 </style>
 </head>
 
 <body>
 
+<canvas id="matrix"></canvas>
+
 <!-- PERFIL -->
 <div class="container">
     <div class="profile-name">Sávio Dev 🚀</div>
     <div class="subtext">
-        Criação de sistemas e soluções tecnológicas com foco em inovação
+        Não é sobre escrever código... é sobre o poder que ele pode gerar 🚀
     </div>
 </div>
 
 <!-- LINGUAGENS -->
 <div class="container">
     <h2>💻 Linguagens</h2>
-
     <div class="cards">
 
         <div class="card">
@@ -175,125 +194,82 @@ body {
     </div>
 </div>
 
-<!-- INOVAÇÃO DIGITAL -->
-<div class="container">
-    <h2>⚡ Inovação Digital</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg">
-            <h3>Kali Linux</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg">
-            <h3>GitHub</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg">
-            <h3>Git</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg">
-            <h3>VS Code</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png">
-            <h3>Elender</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png">
-            <h3>Acode</h3>
-        </div>
-
-    </div>
-</div>
-
-<!-- O QUE FAZ (MELHORADO) -->
+<!-- O QUE FAZ -->
 <div class="container">
     <h2>🔥 O que eu faço</h2>
-
     <div class="cards">
 
-        <div class="card">
-            <span class="icon">🌐</span>
-            <h3>Sites</h3>
-            <p>Criação moderna</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">⚙️</span>
-            <h3>Sistemas</h3>
-            <p>Web tools personalizados</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">📱</span>
-            <h3>Apps</h3>
-            <p>Aplicações funcionais</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">🎬</span>
-            <h3>Vídeos</h3>
-            <p>Edição social</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">📈</span>
-            <h3>Tráfego Pago</h3>
-            <p>Gestão de anúncios</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">📊</span>
-            <h3>Tráfego Orgânico</h3>
-            <p>Crescimento digital</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">💰</span>
-            <h3>Marketing Digital</h3>
-            <p>Estratégias online</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">📦</span>
-            <h3>Revenda</h3>
-            <p>Produtos digitais</p>
-        </div>
-
-        <div class="card">
-            <span class="icon">💸</span>
-            <h3>Renda Extra</h3>
-            <p>Ganhos pela internet</p>
-        </div>
+        <div class="card"><span class="icon">🌐</span><h3>Sites</h3><p>Criação moderna</p></div>
+        <div class="card"><span class="icon">⚙️</span><h3>Sistemas</h3><p>Web tools personalizados</p></div>
+        <div class="card"><span class="icon">📱</span><h3>Apps</h3><p>Aplicações funcionais</p></div>
+        <div class="card"><span class="icon">🎬</span><h3>Vídeos</h3><p>Edição social</p></div>
+        <div class="card"><span class="icon">📈</span><h3>Marketing</h3><p>Tráfego e crescimento</p></div>
+        <div class="card"><span class="icon">💸</span><h3>Renda Extra</h3><p>Ganhos online</p></div>
 
     </div>
 </div>
 
-<!-- ORÇAMENTO -->
+<!-- BOTÃO -->
 <div class="container">
     <a class="orcamento-btn" href="#contato">
-        Fazer Orçamento
+        🚀 Fazer Orçamento
     </a>
 </div>
 
 <!-- CONTATO -->
 <div id="contato" class="container">
-
     <h2>📞 Contato</h2>
 
     <a class="btn" href="https://wa.me/5537998219330" target="_blank">WhatsApp</a>
     <a class="btn" href="https://www.instagram.com/savio_ss_" target="_blank">Instagram</a>
     <a class="btn" href="https://github.com/savioparada-oss" target="_blank">GitHub</a>
-
 </div>
+
+<script>
+// MATRIX
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01SAVIODEV";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
+
+function drawMatrix(){
+    ctx.fillStyle = "rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle = "#bc13fe";
+    ctx.font = fontSize + "px monospace";
+
+    drops.forEach((y,i)=>{
+        const text = letters[Math.floor(Math.random()*letters.length)];
+        ctx.fillText(text,i*fontSize,y*fontSize);
+
+        if(y*fontSize > canvas.height && Math.random()>0.975){
+            drops[i]=0;
+        }
+        drops[i]++;
+    });
+}
+
+setInterval(drawMatrix,35);
+
+// ANIMAÇÃO AO ROLAR
+const elements = document.querySelectorAll('.container');
+
+window.addEventListener('scroll', ()=>{
+    elements.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
