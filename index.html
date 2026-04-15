@@ -5,12 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sávio Dev | Portfólio</title>
 
+<!-- FONTE MODERNA -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', monospace;
+    font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -36,7 +39,9 @@ body {
 
 /* NOME */
 .profile-name {
-    font-size: 32px;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-shadow: 0 0 15px #bc13fe;
 }
 
@@ -45,6 +50,7 @@ body {
     color: #bc13fe;
     margin: 10px 0 20px 0;
     font-size: 14px;
+    font-weight: 400;
 }
 
 /* GRID */
@@ -54,7 +60,7 @@ body {
     gap: 15px;
 }
 
-/* CARD BASE */
+/* CARD */
 .card {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(188, 19, 254, 0.4);
@@ -65,7 +71,7 @@ body {
     overflow: hidden;
 }
 
-/* EFEITO BRILHO */
+/* BRILHO */
 .card::before {
     content: "";
     position: absolute;
@@ -100,6 +106,7 @@ body {
 .card h3 {
     color: #bc13fe;
     font-size: 15px;
+    font-weight: 600;
     margin-bottom: 5px;
 }
 
@@ -107,6 +114,7 @@ body {
 .card p {
     font-size: 12px;
     color: #ccc;
+    font-weight: 300;
 }
 
 /* BOTÃO ORÇAMENTO */
@@ -118,7 +126,7 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 10px;
-    font-weight: bold;
+    font-weight: 600;
     box-shadow: 0 0 15px #bc13fe;
     transition: 0.3s;
 }
@@ -136,6 +144,7 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 6px;
+    font-weight: 500;
 }
 
 .btn:hover {
@@ -155,7 +164,7 @@ body {
     </div>
 </div>
 
-<!-- O QUE FAZ (MELHORADO) -->
+<!-- O QUE FAZ -->
 <div class="container">
     <h2>🔥 O que eu faço</h2>
 
