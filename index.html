@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sávio Dev | Hacker Bio</title>
+<title>Sávio Dev | Portfólio</title>
 
 <style>
 * {
@@ -13,187 +13,164 @@
     font-family: 'Courier New', monospace;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #000;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-#matrix {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
+/* CONTAINER */
 .container {
-    background: rgba(0, 0, 0, 0.85);
-    padding: 2.5rem;
+    background: rgba(0,0,0,0.85);
+    padding: 25px;
     border-radius: 15px;
     border: 2px solid #bc13fe;
     box-shadow: 0 0 20px #bc13fe;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
+    max-width: 500px;
+    margin: 20px auto;
 }
 
+/* TITULO */
 .profile-name {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 28px;
     text-shadow: 0 0 15px #bc13fe;
 }
 
 .status-text {
-    font-size: 0.8rem;
     color: #bc13fe;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
 }
 
-.links {
+/* BOTÃO ORÇAMENTO */
+.orcamento-btn {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #bc13fe, #7a00ff);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #bc13fe;
+    transition: 0.3s;
+}
+
+.orcamento-btn:hover {
+    transform: scale(1.05);
+}
+
+/* CARDS */
+.cards {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 10px;
 }
 
+.card {
+    border: 1px solid #bc13fe;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px #bc13fe;
+    transform: scale(1.03);
+}
+
+.card h3 {
+    color: #bc13fe;
+    margin-bottom: 5px;
+}
+
+/* BOTÕES */
 .btn {
-    text-decoration: none;
-    color: #fff;
+    display: block;
+    margin: 10px auto;
     padding: 12px;
     border: 2px solid #bc13fe;
-    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
 }
 
 .btn:hover {
     background: #bc13fe;
-    color: #000;
+    color: black;
 }
 
-.stats {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-}
-
-.reaction-system {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-.reaction-btn {
-    background: transparent;
-    border: 1px solid #bc13fe;
-    color: #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.reaction-btn:hover {
-    background: #bc13fe;
-    color: #000;
+#contato {
+    margin-top: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
-
+<!-- PERFIL -->
 <div class="container">
-    <div class="profile-name">Sávio Dev</div>
-    <div class="status-text">System Administrator</div>
+    <div class="profile-name">Sávio Dev 🚀</div>
+    <div class="status-text">Desenvolvedor | Criador de sistemas | Web tools</div>
 
-    <div class="links">
-        <a href="https://www.instagram.com/savio_ss_" target="_blank" class="btn">Instagram</a>
-        <a href="https://wa.me/5537998219330" target="_blank" class="btn">WhatsApp</a>
-        <a href="https://github.com/savioparada-oss" target="_blank" class="btn">GitHub</a>
-    </div>
+    <!-- BOTÃO ORÇAMENTO -->
+    <a class="orcamento-btn" href="#contato">
+        Fazer Orçamento
+    </a>
+</div>
 
-    <div class="stats">
-        <div>ACCESS_LOG: <span id="view-val">0</span></div>
+<!-- O QUE VOCÊ FAZ -->
+<div class="container">
+    <h2>🔥 O que eu faço</h2>
 
-        <p>👍 <span id="like-val">0</span></p>
-        <p>👎 <span id="dislike-val">0</span></p>
+    <div class="cards">
+        <div class="card">
+            <h3>🌐 Sites</h3>
+            <p>Criação de sites modernos e rápidos</p>
+        </div>
 
-        <div class="reaction-system">
-            <button class="reaction-btn" onclick="addLike()">👍 Like</button>
-            <button class="reaction-btn" onclick="addDislike()">👎 Dislike</button>
+        <div class="card">
+            <h3>⚙️ Sistemas</h3>
+            <p>Ferramentas web personalizadas</p>
+        </div>
+
+        <div class="card">
+            <h3>📱 Apps</h3>
+            <p>Criação de aplicativos simples</p>
+        </div>
+
+        <div class="card">
+            <h3>🎬 Edição de Vídeo</h3>
+            <p>Edições para redes sociais</p>
+        </div>
+
+        <div class="card">
+            <h3>📈 Tráfego Pago</h3>
+            <p>Gestão de anúncios pagos</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Tráfego Orgânico</h3>
+            <p>Crescimento sem anúncios</p>
         </div>
     </div>
 </div>
 
-<script>
-// MATRIX
-const canvas = document.getElementById('matrix');
-const ctx = canvas.getContext('2d');
+<!-- CONTATO -->
+<div id="contato" class="container">
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    <h2>📞 Contato</h2>
 
-const letters = "01qwertyuiopasdfghjkl";
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
+    <a class="btn" href="https://wa.me/5537998219330" target="_blank">WhatsApp</a>
+    <a class="btn" href="https://www.instagram.com/savio_ss_" target="_blank">Instagram</a>
+    <a class="btn" href="https://github.com/savioparada-oss" target="_blank">GitHub</a>
 
-function drawMatrix() {
-    ctx.fillStyle = "rgba(0,0,0,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "#bc13fe";
-    ctx.font = fontSize + "px monospace";
-
-    drops.forEach((y,i)=>{
-        const text = letters[Math.floor(Math.random()*letters.length)];
-        ctx.fillText(text,i*fontSize,y*fontSize);
-
-        if(y*fontSize > canvas.height && Math.random()>0.975){
-            drops[i]=0;
-        }
-        drops[i]++;
-    });
-}
-
-setInterval(drawMatrix,35);
-
-// ===== STORAGE =====
-let views = parseInt(localStorage.getItem('savio_views') || 0);
-let likes = parseInt(localStorage.getItem('savio_likes') || 0);
-let dislikes = parseInt(localStorage.getItem('savio_dislikes') || 0);
-
-// Views
-views++;
-localStorage.setItem('savio_views', views);
-
-// Mostrar
-document.getElementById('view-val').innerText = views;
-document.getElementById('like-val').innerText = likes;
-document.getElementById('dislike-val').innerText = dislikes;
-
-// FUNÇÕES
-function addLike(){
-    likes++;
-    localStorage.setItem('savio_likes', likes);
-    document.getElementById('like-val').innerText = likes;
-}
-
-function addDislike(){
-    dislikes++;
-    localStorage.setItem('savio_dislikes', dislikes);
-    document.getElementById('dislike-val').innerText = dislikes;
-}
-
-// RESPONSIVO
-window.addEventListener('resize', ()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-</script>
+</div>
 
 </body>
 </html>
