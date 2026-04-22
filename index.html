@@ -6,6 +6,17 @@
 <title>Sávio Dev | Portfólio</title>
 
 <style>
+:root {
+    --bg: #000;
+    --text: #fff;
+    --primary: #bc13fe;
+}
+
+.light {
+    --bg: #fff;
+    --text: #000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,70 +24,23 @@
     font-family: 'Courier New', monospace;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background: #000;
-    color: white;
+    background: var(--bg);
+    color: var(--text);
     text-align: center;
+    transition: 0.3s;
 }
 
-/* LOADING */
-.loader {
+/* BOTÃO TEMA */
+.theme-toggle {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 9999;
-}
-
-.loader h1 {
-    color: #bc13fe;
-    font-size: 16px;
-    animation: blink 1s infinite;
-}
-
-.bar {
-    width: 200px;
-    height: 5px;
-    background: #222;
-    margin-top: 20px;
-    overflow: hidden;
-    border-radius: 5px;
-}
-
-.bar span {
-    display: block;
-    height: 100%;
-    width: 0%;
-    background: #bc13fe;
-    animation: load 2s forwards;
-}
-
-@keyframes load {
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { opacity: 0.3; }
-}
-
-/* ENTRADA */
-.main {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s;
-}
-
-.main.show {
-    opacity: 1;
-    transform: translateY(0);
+    top: 10px;
+    right: 10px;
+    background: var(--primary);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* CONTAINER */
@@ -84,8 +48,8 @@ body {
     background: rgba(0,0,0,0.85);
     padding: 25px;
     border-radius: 15px;
-    border: 2px solid #bc13fe;
-    box-shadow: 0 0 20px #bc13fe;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 20px var(--primary);
     max-width: 800px;
     margin: 15px auto;
 }
@@ -98,12 +62,12 @@ h2 {
 /* NOME */
 .profile-name {
     font-size: 32px;
-    text-shadow: 0 0 15px #bc13fe;
+    text-shadow: 0 0 15px var(--primary);
 }
 
 /* FRASE */
 .subtext {
-    color: #bc13fe;
+    color: var(--primary);
     margin: 10px 0 20px 0;
     font-size: 14px;
 }
@@ -117,7 +81,7 @@ h2 {
 
 /* CARD */
 .card {
-    border: 1px solid #bc13fe;
+    border: 1px solid var(--primary);
     padding: 18px;
     border-radius: 12px;
     transition: 0.3s;
@@ -126,7 +90,7 @@ h2 {
 
 .card:hover {
     transform: scale(1.07);
-    box-shadow: 0 0 25px #bc13fe;
+    box-shadow: 0 0 25px var(--primary);
 }
 
 /* IMG */
@@ -138,7 +102,7 @@ h2 {
 
 /* TEXT */
 .card h3 {
-    color: #bc13fe;
+    color: var(--primary);
     font-size: 14px;
 }
 
@@ -154,29 +118,48 @@ h2 {
     display: inline-block;
     margin: 15px 0;
     padding: 12px 22px;
-    background: linear-gradient(90deg, #bc13fe, #7a00ff);
+    background: linear-gradient(90deg, var(--primary), #7a00ff);
     color: white;
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
-    box-shadow: 0 0 15px #bc13fe;
+    box-shadow: 0 0 15px var(--primary);
 }
 
 .orcamento-btn:hover {
     transform: scale(1.05);
+}
+
+/* WHATS FLUTUANTE */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+/* OFERTA */
+.oferta {
+    color: var(--primary);
+    margin-top: 10px;
+}
+
+/* VAGAS */
+.vagas {
+    margin-top: 10px;
+    font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOADING -->
-<div class="loader">
-    <h1>Inicializando sistema...</h1>
-    <div class="bar"><span></span></div>
-</div>
-
-<div class="main">
+<button class="theme-toggle" onclick="toggleTheme()">🌗</button>
 
 <!-- PERFIL -->
 <div class="container">
@@ -198,19 +181,6 @@ h2 {
     </div>
 </div>
 
-<!-- INOVAÇÃO DIGITAL -->
-<div class="container">
-    <h2>⚡ Inovação Digital</h2>
-    <div class="cards">
-        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"><h3>Kali Linux</h3></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"><h3>GitHub</h3></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"><h3>Git</h3></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"><h3>VS Code</h3></div>
-        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png"><h3>Elender</h3></div>
-        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/888/888859.png"><h3>Acode</h3></div>
-    </div>
-</div>
-
 <!-- O QUE FAZ -->
 <div class="container">
     <h2>🔥 O que eu faço</h2>
@@ -227,17 +197,29 @@ h2 {
 <!-- BOTÃO -->
 <div class="container">
     <a class="orcamento-btn" href="orcamento.html">Fazer Orçamento</a>
+
+    <p class="oferta">🔥 Oferta acaba em: <span id="tempo"></span></p>
+    <p class="vagas">⚠️ Restam 3 vagas essa semana</p>
 </div>
 
-</div>
+<!-- WHATS -->
+<a class="whatsapp" href="https://wa.me/5537998219330" target="_blank">💬</a>
 
 <script>
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        document.querySelector(".loader").style.display = "none";
-        document.querySelector(".main").classList.add("show");
-    }, 2000);
-});
+// MODO CLARO/ESCURO
+function toggleTheme() {
+    document.body.classList.toggle("light");
+}
+
+// CONTADOR (10 minutos)
+let tempo = 600;
+
+setInterval(() => {
+    let min = Math.floor(tempo / 60);
+    let seg = tempo % 60;
+    document.getElementById("tempo").innerText = min + ":" + (seg < 10 ? "0"+seg : seg);
+    tempo--;
+}, 1000);
 </script>
 
 </body>
