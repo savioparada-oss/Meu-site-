@@ -16,7 +16,7 @@ body{
 .container{
     margin:40px auto;
     padding:25px;
-    max-width:800px;
+    max-width:850px;
     border:2px solid #bc13fe;
     border-radius:15px;
     box-shadow:0 0 20px #bc13fe;
@@ -60,6 +60,41 @@ h1{
     margin-top:10px;
     color:#bc13fe;
 }
+
+/* FAQ */
+.faq {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.item {
+    margin-bottom: 10px;
+    border: 1px solid #bc13fe;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pergunta {
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pergunta:hover {
+    background: #1a001f;
+}
+
+.resposta {
+    display: none;
+    padding: 12px;
+    background: #0a0a0a;
+    color: #ccc;
+}
 </style>
 </head>
 
@@ -70,11 +105,11 @@ h1{
     <h1>💸 Renda Extra no Digital</h1>
 
     <p class="sub">
-        Aprenda a gerar renda usando o celular e a internet 🚀
+        Aprenda a gerar renda usando a internet e o celular 🚀
     </p>
 
     <p>
-        Você vai aprender estratégias práticas para começar no digital, mesmo sendo iniciante.
+        Você vai aprender estratégias práticas para começar no digital mesmo sendo iniciante.
     </p>
 
     <h3>🔥 O que você vai aprender:</h3>
@@ -82,11 +117,10 @@ h1{
     <div class="section">
         <p>✔ Como vender como afiliado</p>
         <p>✔ Como criar seu próprio produto</p>
-        <p>✔ Estratégias de tráfego pago</p>
-        <p>✔ Estratégias de tráfego orgânico</p>
+        <p>✔ Tráfego pago (anúncios)</p>
+        <p>✔ Tráfego orgânico</p>
         <p>✔ Como gerar vendas online</p>
-        <p>✔ Como usar o celular para trabalhar no digital</p>
-        <p>✔ Estrutura para começar do zero</p>
+        <p>✔ Estratégias usando apenas o celular</p>
     </div>
 
     <h3>💡 Para quem é:</h3>
@@ -95,38 +129,62 @@ h1{
         <p>✔ Iniciantes no digital</p>
         <p>✔ Quem quer renda extra</p>
         <p>✔ Quem quer trabalhar online</p>
-        <p>✔ Quem quer independência financeira digital</p>
+        <p>✔ Quem busca independência financeira</p>
     </div>
 
-    <h3>⚡ Como funciona:</h3>
+    <h3>⚙ Como funciona:</h3>
 
     <div class="section">
         <p>1. Você me chama no WhatsApp</p>
-        <p>2. Recebe todas as instruções</p>
-        <p>3. Começa seu aprendizado no digital</p>
+        <p>2. Recebe o conteúdo e instruções</p>
+        <p>3. Começa sua jornada no digital</p>
     </div>
 
     <h2>❓ Perguntas Frequentes</h2>
 
-    <div class="section">
+    <div class="faq">
 
-        <p><b>O que é renda extra no digital?</b><br>
-        É aprender formas de ganhar dinheiro usando internet, como afiliado ou vendendo produtos.</p>
+        <div class="item">
+            <button class="pergunta">O que é renda extra no digital?</button>
+            <div class="resposta">
+                É aprender formas de ganhar dinheiro usando a internet, como afiliado ou vendendo produtos.
+            </div>
+        </div>
 
-        <p><b>Preciso ter experiência?</b><br>
-        Não. O conteúdo é feito para iniciantes.</p>
+        <div class="item">
+            <button class="pergunta">Preciso ter experiência?</button>
+            <div class="resposta">
+                Não. O conteúdo é feito para iniciantes.
+            </div>
+        </div>
 
-        <p><b>Vou ganhar dinheiro rápido?</b><br>
-        Os resultados dependem do seu esforço e consistência. Em média, entre 2 a 4 meses já é possível ver resultados.</p>
+        <div class="item">
+            <button class="pergunta">Em quanto tempo posso ter resultados?</button>
+            <div class="resposta">
+                Depende do seu esforço, mas em média entre 2 a 4 meses já é possível ver resultados.
+            </div>
+        </div>
 
-        <p><b>Preciso investir dinheiro?</b><br>
-        Algumas estratégias podem ser gratuitas, outras podem envolver investimento em tráfego ou ferramentas.</p>
+        <div class="item">
+            <button class="pergunta">Preciso investir dinheiro?</button>
+            <div class="resposta">
+                Algumas estratégias são gratuitas, outras podem envolver investimento em anúncios ou ferramentas.
+            </div>
+        </div>
 
-        <p><b>Funciona no celular?</b><br>
-        Sim, tudo pode ser feito pelo celular.</p>
+        <div class="item">
+            <button class="pergunta">Funciona no celular?</button>
+            <div class="resposta">
+                Sim, tudo pode ser feito pelo celular.
+            </div>
+        </div>
 
-        <p><b>Como começo?</b><br>
-        Basta clicar no botão abaixo e falar comigo no WhatsApp.</p>
+        <div class="item">
+            <button class="pergunta">Como começo?</button>
+            <div class="resposta">
+                Basta clicar no botão abaixo e falar comigo no WhatsApp.
+            </div>
+        </div>
 
     </div>
 
@@ -134,13 +192,29 @@ h1{
         ⚠️ Vagas limitadas por semana
     </p>
 
-    <a class="btn" href="https://wa.me/5537998219330?text=Quero%20saber%20mais%20sobre%20renda%20extra%20no%20digital" target="_blank">
+    <a class="btn" href="https://wa.me/5537998219330?text=Quero%20começar%20no%20digital%20e%20ter%20renda%20extra" target="_blank">
         💬 Quero começar agora
     </a>
 
     <a class="btn" href="orcamento.html">⬅ Voltar</a>
 
 </div>
+
+<script>
+const perguntas = document.querySelectorAll(".pergunta");
+
+perguntas.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const resposta = btn.nextElementSibling;
+
+        if(resposta.style.display === "block"){
+            resposta.style.display = "none";
+        } else {
+            resposta.style.display = "block";
+        }
+    });
+});
+</script>
 
 </body>
 </html>
