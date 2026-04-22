@@ -60,6 +60,41 @@ h1{
     margin-top:10px;
     color:#bc13fe;
 }
+
+/* FAQ ACCORDION */
+.faq {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.item {
+    margin-bottom: 10px;
+    border: 1px solid #bc13fe;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pergunta {
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pergunta:hover {
+    background: #1a001f;
+}
+
+.resposta {
+    display: none;
+    padding: 12px;
+    background: #0a0a0a;
+    color: #ccc;
+}
 </style>
 </head>
 
@@ -74,7 +109,7 @@ h1{
     </p>
 
     <p>
-        Crio sistemas personalizados que funcionam como site ou aplicativo, acessíveis no celular e no computador, para te ajudar a controlar seu negócio de forma prática.
+        Crio sistemas personalizados que funcionam como site ou aplicativo, acessíveis no celular e no computador.
     </p>
 
     <h3>🔥 O que você pode ter:</h3>
@@ -85,48 +120,66 @@ h1{
         <p>✔ Busca rápida de produtos</p>
         <p>✔ Ver quantidade em tempo real</p>
         <p>✔ Organização de vendas e entradas</p>
-        <p>✔ Sistemas para lojas, assistência técnica e negócios diversos</p>
-        <p>✔ Acesso pelo celular e computador</p>
-        <p>✔ Sistema personalizado para seu tipo de negócio</p>
+        <p>✔ Sistemas para qualquer tipo de negócio</p>
+        <p>✔ Acesso no celular e computador</p>
     </div>
 
     <h3>💡 Para quem é:</h3>
 
     <div class="section">
-        <p>✔ Donos de mercearia</p>
         <p>✔ Lojas e comércios</p>
         <p>✔ Assistência técnica</p>
         <p>✔ Pequenos e médios negócios</p>
-        <p>✔ Quem precisa de organização e controle</p>
+        <p>✔ Quem precisa de organização</p>
     </div>
 
     <h3>⚙ Como funciona:</h3>
 
     <div class="section">
         <p>1. Você me chama no WhatsApp</p>
-        <p>2. Me explica como é seu negócio</p>
-        <p>3. Eu desenvolvo seu sistema personalizado</p>
-        <p>4. Você recebe pronto para usar no celular ou PC</p>
+        <p>2. Me explica seu negócio</p>
+        <p>3. Eu crio seu sistema personalizado</p>
+        <p>4. Você recebe pronto para usar</p>
     </div>
 
     <h2>❓ Perguntas Frequentes</h2>
 
-    <div class="section">
+    <div class="faq">
 
-        <p><b>O que é um sistema personalizado?</b><br>
-        É um sistema feito sob medida para organizar e automatizar o seu negócio.</p>
+        <div class="item">
+            <button class="pergunta">O que é um sistema personalizado?</button>
+            <div class="resposta">
+                É um sistema feito sob medida para organizar e automatizar o seu negócio.
+            </div>
+        </div>
 
-        <p><b>Funciona no celular?</b><br>
-        Sim, funciona no celular e no computador.</p>
+        <div class="item">
+            <button class="pergunta">Funciona no celular?</button>
+            <div class="resposta">
+                Sim, funciona no celular e no computador.
+            </div>
+        </div>
 
-        <p><b>Precisa instalar algo?</b><br>
-        Não, pode ser acessado como site ou app simples.</p>
+        <div class="item">
+            <button class="pergunta">Precisa instalar algo?</button>
+            <div class="resposta">
+                Não, pode ser acessado como site online.
+            </div>
+        </div>
 
-        <p><b>Serve para qualquer tipo de negócio?</b><br>
-        Sim, pode ser adaptado para lojas, assistência técnica e outros.</p>
+        <div class="item">
+            <button class="pergunta">Serve para qualquer negócio?</button>
+            <div class="resposta">
+                Sim, pode ser adaptado para vários tipos de negócio.
+            </div>
+        </div>
 
-        <p><b>Como começo?</b><br>
-        Basta clicar no botão abaixo e falar comigo no WhatsApp.</p>
+        <div class="item">
+            <button class="pergunta">Como começo?</button>
+            <div class="resposta">
+                Clique no botão abaixo e fale comigo no WhatsApp.
+            </div>
+        </div>
 
     </div>
 
@@ -141,6 +194,22 @@ h1{
     <a class="btn" href="orcamento.html">⬅ Voltar</a>
 
 </div>
+
+<script>
+const perguntas = document.querySelectorAll(".pergunta");
+
+perguntas.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const resposta = btn.nextElementSibling;
+
+        if(resposta.style.display === "block"){
+            resposta.style.display = "none";
+        } else {
+            resposta.style.display = "block";
+        }
+    });
+});
+</script>
 
 </body>
 </html>
